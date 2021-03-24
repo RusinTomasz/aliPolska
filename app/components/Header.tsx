@@ -2,7 +2,9 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import Container from "../styles/shared/Container";
-import { colors } from "../styles/variables";
+import { gradients } from "../styles/variables";
+import Logo from "./logo/Logo";
+import FlexWrapper from "../styles/shared/FlexWrapper";
 
 const MainNav = styled.nav`
   display: flex;
@@ -25,30 +27,46 @@ const MainNavLink = styled.a`
 `;
 
 const HeaderContent = styled.header`
-  background-color: ${colors.violette};
+  background-image: ${gradients.redOrange};
 `;
 
 const Header = () => {
   return (
     <HeaderContent>
       <Container>
-        <MainNav>
-          <NavList>
-            <Link href="/" passHref>
-              <MainNavLink>Home</MainNavLink>
-            </Link>
-          </NavList>
-          <NavList>
-            <Link href="/aktualnosci" passHref>
-              <MainNavLink>Aktualności</MainNavLink>
-            </Link>
-          </NavList>
-          <NavList>
-            <Link href="/aktualnosci/najlepsze-sukienki-na-aliexpress" passHref>
-              <MainNavLink>Sukienki</MainNavLink>
-            </Link>
-          </NavList>
-        </MainNav>
+        <FlexWrapper
+          wrap="wrap"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Link href="/">
+            <a>
+              <FlexWrapper alignItems="center">
+                <Logo />
+              </FlexWrapper>
+            </a>
+          </Link>
+          <MainNav>
+            <NavList>
+              <Link href="/" passHref>
+                <MainNavLink>Home</MainNavLink>
+              </Link>
+            </NavList>
+            <NavList>
+              <Link href="/aktualnosci" passHref>
+                <MainNavLink>Aktualności</MainNavLink>
+              </Link>
+            </NavList>
+            <NavList>
+              <Link
+                href="/aktualnosci/najlepsze-sukienki-na-aliexpress"
+                passHref
+              >
+                <MainNavLink>Sukienki</MainNavLink>
+              </Link>
+            </NavList>
+          </MainNav>
+        </FlexWrapper>
       </Container>
     </HeaderContent>
   );
