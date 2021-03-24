@@ -1,23 +1,26 @@
 import Head from "next/head";
 import { useSelector } from "react-redux";
-import { postsSelectors } from "../store/selectors";
-import { wrapper } from "../store/store";
-import * as postActions from "../store/actions/postActions";
-import axios from "axios";
-import { fetchPosts } from "../store/services/post.service";
+import { postsSelectors } from "../../store/selectors";
+import { wrapper } from "../../store/store";
+import * as postActions from "../../store/actions/postActions";
+import { fetchPosts } from "../../store/services/post.service";
+import Link from "next/link";
 
 const Blog = (props): JSX.Element => {
-  const posts = useSelector((state) => postsSelectors.getPosts(state));
-
   return (
     <>
       <Head>
         <title>Blog</title>
       </Head>
       <h1>Blog</h1>
+      <Link href="/">FrontPage</Link>
       <div>
         {props.posts &&
-          props.posts.map((post) => <div key={post.id}>{post.title}</div>)}
+          props.posts.map((post) => (
+            <div key={post.id}>
+              <h2>{post.Title}</h2>
+            </div>
+          ))}
       </div>
     </>
   );
