@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { FC } from "react";
 import { AppProps } from "next/dist/next-server/lib/router/router";
-import GlobalStyle from "./app/styles/GlobalStyle";
+import GlobalStyle from "../app/styles/GlobalStyle";
 
 /* Redux */
 import { wrapper } from "../store/store";
