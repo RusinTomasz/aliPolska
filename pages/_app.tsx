@@ -7,12 +7,14 @@ import GlobalStyle from "../app/styles/GlobalStyle";
 import { wrapper } from "../store/store";
 import { Provider } from "react-redux";
 import store from "../store/store";
+import Header from "../app/components/Header";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyle />
       <Provider store={store}>
+        <Header />
         <Component {...pageProps} />
       </Provider>
     </>
