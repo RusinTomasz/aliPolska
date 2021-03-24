@@ -5,7 +5,6 @@ export const fetchPosts = async () => {
     .then((response) => response.data)
     .catch((error) => console.log(error));
 
-  console.log(posts);
   return posts;
 };
 

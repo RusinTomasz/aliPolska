@@ -24,8 +24,6 @@ export default Post;
 export const getStaticProps = wrapper.getStaticProps(async ({ params }) => {
   const post = await fetchPost(params.slug);
 
-  console.log(params.slug);
-
   return {
     props: { post },
   };
