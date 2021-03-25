@@ -1,17 +1,36 @@
 import Head from "next/head";
+
+//Services
+import { fetchPosts } from "../../store/services/post.service";
+
+//Redux
 import { wrapper } from "../../store/store";
 import * as postActions from "../../store/actions/postActions";
-import { fetchPosts } from "../../store/services/post.service";
-import Link from "next/link";
-import PageTitle from "../../app/styles/shared/pageTitle/PageTitle";
 
-const Blog = (props): JSX.Element => {
+//Styles
+import PageTitle from "../../app/styles/shared/pageTitle/PageTitle";
+import Container from "../../app/styles/shared/Container";
+
+//Types
+import Post from "../../app/types/Post";
+
+//Components
+import PostsList from "../../app/components/post/PostsList";
+
+interface BlogProps {
+  posts: Post[];
+}
+
+const Blog = (props: BlogProps): JSX.Element => {
   return (
     <>
       <Head>
         <title>Blog</title>
       </Head>
-      <PageTitle>Najnowsze aktualności</PageTitle>
+      <Container>
+        <PageTitle>Najnowsze aktualności</PageTitle>
+        <PostsList posts={props.posts}></PostsList>
+      </Container>
     </>
   );
 };
@@ -19,7 +38,7 @@ const Blog = (props): JSX.Element => {
 export default Blog;
 
 export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  const posts = await fetchPosts();
+  const posts: Post[] = await fetchPosts();
 
   store.dispatch<any>(postActions.setPosts(posts));
 

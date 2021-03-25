@@ -14,6 +14,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 48px;
     line-height: 50px;
   }
+
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   h3 {
     font-size: 18px;
     line-height: 25px;
@@ -27,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
+    display: inline-block;
   }
 `;
 
