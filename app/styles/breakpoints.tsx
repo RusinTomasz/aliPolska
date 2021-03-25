@@ -1,26 +1,26 @@
 interface Breakpoints {
-  sm: "576px";
-  md: "768px";
-  lg: "992px";
-  xl: "1200px";
+  sm: "576";
+  md: "768";
+  lg: "992";
+  xl: "1200";
 }
 
 const breakpoints: Breakpoints = {
-  sm: "576px",
-  md: "768px",
-  lg: "992px",
-  xl: "1200px",
+  sm: "576",
+  md: "768",
+  lg: "992",
+  xl: "1200",
 };
 
-const up = (breakpoint: String) => {
-  return `@media (min-width: calc(${breakpoint} + 1px))`;
+const minWidth = (breakpoint: String) => {
+  return `@media (min-width: calc(${breakpoint}px + 1px))`;
 };
 
-const down = (breakpoint: String) => {
-  return `@media (max-width: ${breakpoint})`;
+const maxWidth = (breakpoint: String) => {
+  return `@media (max-width: ${breakpoint}px)`;
 };
 
-const between = (breakpointMin: String, breakpointMax: String) =>
-  `@media (max-width: ${breakpointMax}) and (min-width: calc(${breakpointMin} + 1px))`;
+const betweenWidth = (breakpointMin: String, breakpointMax: String) =>
+  `@media (max-width: ${breakpointMax}px) and (min-width: calc(${breakpointMin}px + 1px))`;
 
-export { up, down, between, breakpoints };
+export { minWidth, maxWidth, betweenWidth, breakpoints };
