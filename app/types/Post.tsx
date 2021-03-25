@@ -1,13 +1,13 @@
 interface Format {
-  name: String;
-  hash: String;
-  ext: String;
-  mime: String;
-  width: Number;
-  height: Number;
-  size: Number;
-  path: String;
-  url: String;
+  name: string;
+  hash: string;
+  ext: string;
+  mime: string;
+  width: number;
+  height: number;
+  size: number;
+  path: string;
+  url: string;
 }
 
 interface ImageFormats {
@@ -18,42 +18,42 @@ interface ImageFormats {
 }
 
 interface SingleImage {
-  id: Number;
-  name: String;
-  alternativeText: String;
-  caption: String;
-  width: Number;
-  height: Number;
+  id: number;
+  name: string;
+  alternativeText: string;
+  caption: string;
+  width: number;
+  height: number;
   formats: ImageFormats;
-  hash: String;
-  ext: String;
-  mime: String;
-  size: Number;
-  url: String;
-  previewUrl: String;
-  provider: String;
-  provider_metadata: String;
-  created_at: String;
-  updated_at: String;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: string;
+  provider: string;
+  provider_metadata: string;
+  created_at: string;
+  updated_at: string;
 }
 
 interface ProductComponent {
-  __component: String;
-  id: Number;
-  title: String;
-  description: String;
-  link: String;
+  __component: string;
+  id: number;
+  title: string;
+  description: string;
+  link: string;
   image: SingleImage[];
 }
 
 interface Post {
-  id: Number;
-  body: String;
-  title: String;
-  slug: String;
-  published_at: String;
-  created_at: String;
-  updated_at: String;
+  id: number;
+  body: string;
+  title: string;
+  slug: string;
+  published_at: string;
+  created_at: string;
+  updated_at: string;
   products: ProductComponent[];
   introImage: SingleImage;
 }
